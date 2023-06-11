@@ -1,8 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-
 package br.unipar.central.executions;
 
 import br.unipar.central.models.BancoPOJO;
@@ -22,7 +17,7 @@ public class BancoExecution {
             scanner.nextLine();
             System.out.println("Informe o nome da banco: ");
             banco.setNome(scanner.nextLine());
-            System.out.println("Informe o ra de banco: ");
+            System.out.println("Informe o ra de aluno que está cadastrando esse banco: : ");
             banco.setRa(scanner.nextLine());
             BancoService bancoService = new BancoService();
             bancoService.insert(banco);
@@ -30,7 +25,7 @@ public class BancoExecution {
             System.out.println(msg);
             return msg;
         } catch (Exception ex) {
-            String msg = "Erro ao inserir " + ex.getMessage();
+            String msg = ex.getMessage();
             System.out.println(msg);
             return msg;
         }
@@ -46,7 +41,7 @@ public class BancoExecution {
             System.out.println(msg);
             return msg;
         } catch (Exception ex) {
-            String msg = "Erro ao buscar todos os itens: " + ex.getMessage();
+            String msg = ex.getMessage();
             System.out.println(msg);
             return msg;
         }
@@ -58,7 +53,7 @@ public class BancoExecution {
             BancoPOJO banco = new BancoPOJO();
             Scanner scanner = new Scanner(System.in);
 
-            System.out.println("Informe o ID de  : ");
+            System.out.println("Informe o ID do banco para realizar a busca: ");
             int id = scanner.nextInt();
             banco.setId(id);
             BancoPOJO bancoPOJO = new BancoPOJO();
@@ -67,7 +62,7 @@ public class BancoExecution {
             System.out.println(msg);
             return msg;
         } catch (Exception ex) {
-            String msg = "Erro ao buscar o item por ID: " + ex.getMessage();
+            String msg = ex.getMessage();
             System.out.println(msg);
             return msg;
         }
@@ -87,7 +82,7 @@ public class BancoExecution {
             System.out.println(msg);
             return msg;
         } catch (Exception ex) {
-            String msg = "Erro ao deletar o item por ID: " + ex.getMessage();
+            String msg = ex.getMessage();
             System.out.println(msg);
             return msg;
         }
@@ -103,7 +98,7 @@ public class BancoExecution {
             scanner.nextLine();
             System.out.println("Informe o nome da banco: ");
             banco.setNome(scanner.nextLine());
-            System.out.println("Informe o ra de banco: ");
+            System.out.println("Informe o ra de aluno que está dando update nesse banco: ");
             banco.setRa(scanner.nextLine());
             BancoService bancoService = new BancoService();
             bancoService.update(banco);
@@ -111,7 +106,7 @@ public class BancoExecution {
             System.out.println(msg);
             return msg;
         } catch (Exception ex) {
-            String msg = "Erro ao dar update: " + ex.getMessage();
+            String msg = ex.getMessage();
             System.out.println(msg);
             return msg;
         }

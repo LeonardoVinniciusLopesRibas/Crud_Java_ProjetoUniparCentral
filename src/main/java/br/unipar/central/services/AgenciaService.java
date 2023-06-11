@@ -22,7 +22,7 @@ public class AgenciaService {
 
         String digitoStr = String.valueOf(agencia.getDigito());
 
-        if (agencia == null) {
+        if (agencia.getClass() == null) {
             throw new EntidadeOuClasseEmBrancoOuNaoInformadaException("agência");
         }
 

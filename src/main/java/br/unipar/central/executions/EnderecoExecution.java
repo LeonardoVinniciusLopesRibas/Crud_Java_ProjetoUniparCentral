@@ -1,11 +1,5 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-
 package br.unipar.central.executions;
 
-import br.unipar.central.models.AgenciaPOJO;
 import br.unipar.central.models.CidadePOJO;
 import br.unipar.central.models.EnderecoPOJO;
 import br.unipar.central.models.PessoaPOJO;
@@ -38,15 +32,15 @@ public class EnderecoExecution {
             System.out.println("Informe o complemento: ");
             endereco.setComplemento(scanner.nextLine());
 
-            System.out.println("Informe o ra: ");
+            System.out.println("Informe o ra do aluno que está inserindo nessa agêencia: ");
             endereco.setRa(scanner.nextLine());
             
-            System.out.println("Informe o id de pessoa: ");
+            System.out.println("Informe o id de pessoa atrelada a esse endereço: ");
             PessoaPOJO pessoaPOJO = new PessoaPOJO();
             pessoaPOJO.setId(scanner.nextInt());
             endereco.setPessoa(pessoaPOJO);
             
-            System.out.println("Informe o id da agencia: ");
+            System.out.println("Informe o id da agencia atrelada a esse endereço: ");
             CidadePOJO cidadePOJO = new CidadePOJO();
             cidadePOJO.setId(scanner.nextInt());
             endereco.setCidade(cidadePOJO);
@@ -57,7 +51,7 @@ public class EnderecoExecution {
             System.out.println(msg);
             return msg;
         } catch (Exception ex) {
-            String msg = "Erro ao inserir " + ex.getMessage();
+            String msg = ex.getMessage();
             System.out.println(msg);
             return msg;
         }
@@ -73,7 +67,7 @@ public class EnderecoExecution {
             System.out.println(msg);
             return msg;
         } catch (Exception ex) {
-            String msg = "Erro ao buscar todos os itens: " + ex.getMessage();
+            String msg = ex.getMessage();
             System.out.println(msg);
             return msg;
         }
@@ -85,7 +79,7 @@ public class EnderecoExecution {
             EnderecoPOJO endereco = new EnderecoPOJO();
             Scanner scanner = new Scanner(System.in);
 
-            System.out.println("Informe o ID de  : ");
+            System.out.println("Informe o ID de endereço para realizar a busca: ");
             int id = scanner.nextInt();
             endereco.setId(id);
             EnderecoPOJO enderecoPOJO = new EnderecoPOJO();
@@ -94,7 +88,7 @@ public class EnderecoExecution {
             System.out.println(msg);
             return msg;
         } catch (Exception ex) {
-            String msg = "Erro ao buscar o item por ID: " + ex.getMessage();
+            String msg = ex.getMessage();
             System.out.println(msg);
             return msg;
         }
@@ -114,7 +108,7 @@ public class EnderecoExecution {
             System.out.println(msg);
             return msg;
         } catch (Exception ex) {
-            String msg = "Erro ao deletar o item por ID: " + ex.getMessage();
+            String msg = ex.getMessage();
             System.out.println(msg);
             return msg;
         }
@@ -143,15 +137,15 @@ public class EnderecoExecution {
             System.out.println("Informe o complemento: ");
             endereco.setComplemento(scanner.nextLine());
 
-            System.out.println("Informe o ra: ");
+            System.out.println("Informe o ra do aluno que está dando update: ");
             endereco.setRa(scanner.nextLine());
             
-            System.out.println("Informe o id de pessoa: ");
+            System.out.println("Informe o id de pessoa atrelada a esse endereço: ");
             PessoaPOJO pessoaPOJO = new PessoaPOJO();
             pessoaPOJO.setId(scanner.nextInt());
             endereco.setPessoa(pessoaPOJO);
             
-            System.out.println("Informe o id da agencia: ");
+            System.out.println("Informe o id da agencia atrelada a esse endereço: ");
             CidadePOJO cidadePOJO = new CidadePOJO();
             cidadePOJO.setId(scanner.nextInt());
             endereco.setCidade(cidadePOJO);
@@ -162,7 +156,7 @@ public class EnderecoExecution {
             System.out.println(msg);
             return msg;
         } catch (Exception ex) {
-            String msg = "Erro ao dar update: " + ex.getMessage();
+            String msg = ex.getMessage();
             System.out.println(msg);
             return msg;
         }

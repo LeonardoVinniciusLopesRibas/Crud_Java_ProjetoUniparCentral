@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package br.unipar.central.executions;
 
 import br.unipar.central.models.PessoaPOJO;
@@ -21,7 +17,7 @@ public class PessoaExecution {
             scanner.nextLine();
             System.out.println("Informe o email da pessoa: ");
             pessoa.setEmail(scanner.nextLine());
-            System.out.println("Informe o ra de pessoa: ");
+            System.out.println("Informe o ra do aluno que está cadastrando essa pessoa: ");
             pessoa.setRa(scanner.nextLine());
             PessoaService pessoaService = new PessoaService();
             pessoaService.insert(pessoa);
@@ -29,7 +25,7 @@ public class PessoaExecution {
             System.out.println(msg);
             return msg;
         } catch (Exception ex) {
-            String msg = "Erro ao inserir " + ex.getMessage();
+            String msg = ex.getMessage();
             System.out.println(msg);
             return msg;
         }
@@ -45,7 +41,7 @@ public class PessoaExecution {
             System.out.println(msg);
             return msg;
         } catch (Exception ex) {
-            String msg = "Erro ao buscar todos os itens: " + ex.getMessage();
+            String msg = ex.getMessage();
             System.out.println(msg);
             return msg;
         }
@@ -57,7 +53,7 @@ public class PessoaExecution {
             PessoaPOJO pessoa = new PessoaPOJO();
             Scanner scanner = new Scanner(System.in);
 
-            System.out.println("Informe o ID de  : ");
+            System.out.println("Informe o ID de pessoa para realizar a busca: ");
             int id = scanner.nextInt();
             pessoa.setId(id);
             PessoaPOJO pessoaPOJO = new PessoaPOJO();
@@ -66,7 +62,7 @@ public class PessoaExecution {
             System.out.println(msg);
             return msg;
         } catch (Exception ex) {
-            String msg = "Erro ao buscar o item por ID: " + ex.getMessage();
+            String msg = ex.getMessage();
             System.out.println(msg);
             return msg;
         }
@@ -86,7 +82,7 @@ public class PessoaExecution {
             System.out.println(msg);
             return msg;
         } catch (Exception ex) {
-            String msg = "Erro ao deletar o item por ID: " + ex.getMessage();
+            String msg = ex.getMessage();
             System.out.println(msg);
             return msg;
         }
@@ -102,7 +98,7 @@ public class PessoaExecution {
             scanner.nextLine();
             System.out.println("Informe o email da pessoa: ");
             pessoa.setEmail(scanner.nextLine());
-            System.out.println("Informe o ra de pessoa: ");
+            System.out.println("Informe o ra do aluno que está realizando update pessoa: ");
             pessoa.setRa(scanner.nextLine());
             PessoaService pessoaService = new PessoaService();
             pessoaService.update(pessoa);
@@ -110,7 +106,7 @@ public class PessoaExecution {
             System.out.println(msg);
             return msg;
         } catch (Exception ex) {
-            String msg = "Erro ao dar update: " + ex.getMessage();
+            String msg = ex.getMessage();
             System.out.println(msg);
             return msg;
         }

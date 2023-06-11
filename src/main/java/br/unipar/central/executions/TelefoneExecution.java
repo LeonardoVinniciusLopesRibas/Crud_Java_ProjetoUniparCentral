@@ -1,14 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package br.unipar.central.executions;
 
-import br.unipar.central.enums.TipoContaEnum;
 import br.unipar.central.enums.TipoOperadoraEnum;
 import br.unipar.central.models.AgenciaPOJO;
 import br.unipar.central.models.PessoaPOJO;
-import br.unipar.central.models.TelefonePOJO;
 import br.unipar.central.models.TelefonePOJO;
 import br.unipar.central.services.TelefoneService;
 import java.util.List;
@@ -25,7 +19,7 @@ public class TelefoneExecution {
             telefone.setId(scanner.nextInt());
             scanner.nextLine();
 
-            System.out.println("Informe o numero da telefone: ");
+            System.out.println("Informe o numero de telefone: ");
             telefone.setNumero(scanner.nextLine());
 
             System.out.println("Informe a operadora (1 - TIM, 2 - CLARO, 3 - VIVO, 4 - OI, 5 - CORREIOS, 6 - LARICELL, 7 - TESLA, 8 - IPHONE, 9 - OUTROS): ");
@@ -83,15 +77,15 @@ public class TelefoneExecution {
             telefone.setOperadora(tipoOp);
             scanner.nextLine();
 
-            System.out.println("Informe o ra: ");
+            System.out.println("Informe o ra do aluno que está cadastrando esse telefone: ");
             telefone.setRa(scanner.nextLine());
 
-            System.out.println("Informe o id de agencia: ");
+            System.out.println("Informe o id de agencia atrelada a essa telefone: ");
             AgenciaPOJO agenciaPOJO = new AgenciaPOJO();
             agenciaPOJO.setId(scanner.nextInt());
             telefone.setAgencia(agenciaPOJO);
 
-            System.out.println("Informe o id de pessoa: ");
+            System.out.println("Informe o id de pessoa atrelada a essa telefone: ");
             PessoaPOJO pessoaPOJO = new PessoaPOJO();
             pessoaPOJO.setId(scanner.nextInt());
             telefone.setPessoa(pessoaPOJO);
@@ -102,7 +96,7 @@ public class TelefoneExecution {
             System.out.println(msg);
             return msg;
         } catch (Exception ex) {
-            String msg = "Erro ao inserir " + ex.getMessage();
+            String msg = ex.getMessage();
             System.out.println(msg);
             return msg;
         }
@@ -118,7 +112,7 @@ public class TelefoneExecution {
             System.out.println(msg);
             return msg;
         } catch (Exception ex) {
-            String msg = "Erro ao buscar todos os itens: " + ex.getMessage();
+            String msg = ex.getMessage();
             System.out.println(msg);
             return msg;
         }
@@ -130,7 +124,7 @@ public class TelefoneExecution {
             TelefonePOJO telefone = new TelefonePOJO();
             Scanner scanner = new Scanner(System.in);
 
-            System.out.println("Informe o ID de  : ");
+            System.out.println("Informe o ID de telefone para realizar a busca: ");
             int id = scanner.nextInt();
             telefone.setId(id);
             TelefonePOJO telefonePOJO = new TelefonePOJO();
@@ -139,7 +133,7 @@ public class TelefoneExecution {
             System.out.println(msg);
             return msg;
         } catch (Exception ex) {
-            String msg = "Erro ao buscar o item por ID: " + ex.getMessage();
+            String msg = ex.getMessage();
             System.out.println(msg);
             return msg;
         }
@@ -159,7 +153,7 @@ public class TelefoneExecution {
             System.out.println(msg);
             return msg;
         } catch (Exception ex) {
-            String msg = "Erro ao deletar o item por ID: " + ex.getMessage();
+            String msg = ex.getMessage();
             System.out.println(msg);
             return msg;
         }
@@ -232,15 +226,15 @@ public class TelefoneExecution {
             telefone.setOperadora(tipoOp);
             scanner.nextLine();
 
-            System.out.println("Informe o ra: ");
+            System.out.println("Informe o ra do aluno que está realizando update nesse telefone: ");
             telefone.setRa(scanner.nextLine());
 
-            System.out.println("Informe o id de agencia: ");
+            System.out.println("Informe o id de agencia atrelada a essa telefone: ");
             AgenciaPOJO agenciaPOJO = new AgenciaPOJO();
             agenciaPOJO.setId(scanner.nextInt());
             telefone.setAgencia(agenciaPOJO);
 
-            System.out.println("Informe o id de pessoa: ");
+            System.out.println("Informe o id de pessoa atrelada a essa telefone: ");
             PessoaPOJO pessoaPOJO = new PessoaPOJO();
             pessoaPOJO.setId(scanner.nextInt());
             telefone.setPessoa(pessoaPOJO);
@@ -251,7 +245,7 @@ public class TelefoneExecution {
             System.out.println(msg);
             return msg;
         } catch (Exception ex) {
-            String msg = "Erro ao dar update: " + ex.getMessage();
+            String msg = ex.getMessage();
             System.out.println(msg);
             return msg;
         }

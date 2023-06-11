@@ -13,23 +13,23 @@ public class PessoaFisicaExecution {
         try {
             PessoaFisicaPOJO pessoaFisica = new PessoaFisicaPOJO();
             Scanner scanner = new Scanner(System.in);
-            System.out.println("Informe o nome da pessoaFisica: ");
+            System.out.println("Informe o nome da pessoa fisica: ");
             pessoaFisica.setNome(scanner.nextLine());
-            System.out.println("Informe o cpf de pessoaFisica: ");
+            System.out.println("Informe o cpf de pessoa fisica: ");
             pessoaFisica.setCpf(scanner.nextLine());
-            System.out.println("Informe a rg da pessoaFisica: ");
+            System.out.println("Informe a rg da pessoa fisica: ");
             pessoaFisica.setRg(scanner.nextLine());
-            System.out.println("Informe a data de nascimento da pessoaFisica: ");
-            System.out.println("Informe ano:");
-            int year = scanner.nextInt();
-            System.out.println("Informe mês:");
-            int month = scanner.nextInt();
+            System.out.println("Informe a data de nascimento da pessoa fisica: ");
             System.out.println("Informe dia:");
             int day = scanner.nextInt();
+            System.out.println("Informe mês:");
+            int month = scanner.nextInt();
+            System.out.println("Informe ano:");
+            int year = scanner.nextInt();
             Date dataNascimento = new Date(year - 1900, month - 1, day);
             pessoaFisica.setDataNascimento(dataNascimento);
 
-            System.out.println("Informe o id da pessoa: ");
+            System.out.println("Informe o id da pessoa atrelada a essa pessoa física: ");
             PessoaPOJO pessoaPOJO = new PessoaPOJO();
             pessoaPOJO.setId(scanner.nextInt());
             pessoaFisica.setPessoa(pessoaPOJO);
@@ -40,7 +40,7 @@ public class PessoaFisicaExecution {
             System.out.println(msg);
             return msg;
         } catch (Exception ex) {
-            String msg = "Erro ao inserir " + ex.getMessage();
+            String msg = ex.getMessage();
             System.out.println(msg);
             return msg;
         }
@@ -56,7 +56,7 @@ public class PessoaFisicaExecution {
             System.out.println(msg);
             return msg;
         } catch (Exception ex) {
-            String msg = "Erro ao buscar todos os itens: " + ex.getMessage();
+            String msg = ex.getMessage();
             System.out.println(msg);
             return msg;
         }
@@ -68,7 +68,7 @@ public class PessoaFisicaExecution {
             PessoaFisicaPOJO pessoaFisica = new PessoaFisicaPOJO();
             Scanner scanner = new Scanner(System.in);
 
-            System.out.println("Informe o CPF de  : ");
+            System.out.println("Informe o CPF da pessoa física para realizar a busca: ");
             String cpf = scanner.nextLine();
             pessoaFisica.setCpf(cpf);
             PessoaFisicaPOJO pessoaFisicaPOJO = new PessoaFisicaPOJO();
@@ -77,7 +77,7 @@ public class PessoaFisicaExecution {
             System.out.println(msg);
             return msg;
         } catch (Exception ex) {
-            String msg = "Erro ao buscar o item por ID: " + ex.getMessage();
+            String msg = ex.getMessage();
             System.out.println(msg);
             return msg;
         }
@@ -90,14 +90,14 @@ public class PessoaFisicaExecution {
             PessoaFisicaService pessoaFisicaService = new PessoaFisicaService();
             PessoaFisicaPOJO pessoaFisica = new PessoaFisicaPOJO();
 
-            System.out.println("Informe o CPF de pessoaFisica: ");
+            System.out.println("Informe o CPF de pessoa física: ");
             pessoaFisica.setCpf(scanner.nextLine());
             pessoaFisicaService.delete(pessoaFisica.getCpf());
             String msg = "Item deletado com sucesso";
             System.out.println(msg);
             return msg;
         } catch (Exception ex) {
-            String msg = "Erro ao deletar o item por ID: " + ex.getMessage();
+            String msg = ex.getMessage();
             System.out.println(msg);
             return msg;
         }
@@ -107,23 +107,23 @@ public class PessoaFisicaExecution {
         try {
             PessoaFisicaPOJO pessoaFisica = new PessoaFisicaPOJO();
             Scanner scanner = new Scanner(System.in);
-            System.out.println("Informe o nome da pessoaFisica: ");
+            System.out.println("Informe o nome da pessoa física: ");
             pessoaFisica.setNome(scanner.nextLine());
-            System.out.println("Informe o cpf de pessoaFisica: ");
+            System.out.println("Informe o cpf de pessoa física: ");
             pessoaFisica.setCpf(scanner.nextLine());
-            System.out.println("Informe a rg da pessoaFisica: ");
+            System.out.println("Informe a rg da pessoa física: ");
             pessoaFisica.setRg(scanner.nextLine());
-            System.out.println("Informe a data de nascimento da pessoaFisica: ");
-            System.out.println("Informe ano:");
-            int year = scanner.nextInt();
-            System.out.println("Informe mês:");
-            int month = scanner.nextInt();
+            System.out.println("Informe a data de nascimento da pessoa física: ");
             System.out.println("Informe dia:");
             int day = scanner.nextInt();
+            System.out.println("Informe mês:");
+            int month = scanner.nextInt();
+            System.out.println("Informe ano:");
+            int year = scanner.nextInt();
             Date dataNascimento = new Date(year - 1900, month - 1, day);
             pessoaFisica.setDataNascimento(dataNascimento);
 
-            System.out.println("Informe o id da pessoa: ");
+            System.out.println("Informe o id da pessoa atrelada a essa pessoa física: ");
             PessoaPOJO pessoaPOJO = new PessoaPOJO();
             pessoaPOJO.setId(scanner.nextInt());
             pessoaFisica.setPessoa(pessoaPOJO);
@@ -133,7 +133,7 @@ public class PessoaFisicaExecution {
             System.out.println(msg);
             return msg;
         } catch (Exception ex) {
-            String msg = "Erro ao dar update: " + ex.getMessage();
+            String msg = ex.getMessage();
             System.out.println(msg);
             return msg;
         }

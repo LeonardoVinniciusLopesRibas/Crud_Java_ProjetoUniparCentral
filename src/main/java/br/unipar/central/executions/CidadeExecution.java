@@ -1,11 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package br.unipar.central.executions;
 
 import br.unipar.central.models.CidadePOJO;
-import br.unipar.central.models.BancoPOJO;
 import br.unipar.central.models.EstadoPOJO;
 import br.unipar.central.services.CidadeService;
 import java.util.List;
@@ -22,9 +17,9 @@ public class CidadeExecution {
             scanner.nextLine();
             System.out.println("Informe o nome da cidade: ");
             cidade.setNome(scanner.nextLine());
-            System.out.println("Informe o ra de cidade: ");
+            System.out.println("Informe o ra do aluno que está cadastrando essa cidade: ");
             cidade.setRa(scanner.nextLine());
-            System.out.println("Informe o id do estado: ");
+            System.out.println("Informe o id do estado atrelado a esta cidade: ");
             EstadoPOJO estadoPOJO = new EstadoPOJO();
             estadoPOJO.setId(scanner.nextInt());
             cidade.setEstado(estadoPOJO);
@@ -34,7 +29,7 @@ public class CidadeExecution {
             System.out.println(msg);
             return msg;
         } catch (Exception ex) {
-            String msg = "Erro ao inserir " + ex.getMessage();
+            String msg = ex.getMessage();
             System.out.println(msg);
             return msg;
         }
@@ -50,7 +45,7 @@ public class CidadeExecution {
             System.out.println(msg);
             return msg;
         } catch (Exception ex) {
-            String msg = "Erro ao buscar todos os itens: " + ex.getMessage();
+            String msg = ex.getMessage();
             System.out.println(msg);
             return msg;
         }
@@ -62,7 +57,7 @@ public class CidadeExecution {
             CidadePOJO cidade = new CidadePOJO();
             Scanner scanner = new Scanner(System.in);
 
-            System.out.println("Informe o ID de  : ");
+            System.out.println("Informe o ID da cidade para realizar a busca: ");
             int id = scanner.nextInt();
             cidade.setId(id);
             CidadePOJO cidadePOJO = new CidadePOJO();
@@ -71,7 +66,7 @@ public class CidadeExecution {
             System.out.println(msg);
             return msg;
         } catch (Exception ex) {
-            String msg = "Erro ao buscar o item por ID: " + ex.getMessage();
+            String msg = ex.getMessage();
             System.out.println(msg);
             return msg;
         }
@@ -91,7 +86,7 @@ public class CidadeExecution {
             System.out.println(msg);
             return msg;
         } catch (Exception ex) {
-            String msg = "Erro ao deletar o item por ID: " + ex.getMessage();
+            String msg = ex.getMessage();
             System.out.println(msg);
             return msg;
         }
@@ -106,9 +101,9 @@ public class CidadeExecution {
             scanner.nextLine();
             System.out.println("Informe o nome da cidade: ");
             cidade.setNome(scanner.nextLine());
-            System.out.println("Informe o ra de cidade: ");
+            System.out.println("Informe o ra do aluno que está dando update nessa cidade: ");
             cidade.setRa(scanner.nextLine());
-            System.out.println("Informe o id do estado: ");
+            System.out.println("Informe o id do estado atrelada a essa cidade: ");
             EstadoPOJO estadoPOJO = new EstadoPOJO();
             estadoPOJO.setId(scanner.nextInt());
             cidade.setEstado(estadoPOJO);
@@ -118,7 +113,7 @@ public class CidadeExecution {
             System.out.println(msg);
             return msg;
         } catch (Exception ex) {
-            String msg = "Erro ao dar update: " + ex.getMessage();
+            String msg = ex.getMessage();
             System.out.println(msg);
             return msg;
         }

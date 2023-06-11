@@ -12,15 +12,15 @@ public class PessoaJuridicaExecution {
         try {
             PessoaJuridicaPOJO pessoaJuridica = new PessoaJuridicaPOJO();
             Scanner scanner = new Scanner(System.in);
-            System.out.println("Informe a razão social da pessoaJuridica: ");
+            System.out.println("Informe a razão social da pessoa jurídica: ");
             pessoaJuridica.setRazaoSocial(scanner.nextLine());
-            System.out.println("Informe o cnpj de pessoaJuridica: ");
+            System.out.println("Informe o cnpj de pessoa jurídica: ");
             pessoaJuridica.setCNPJ(scanner.nextLine());
-            System.out.println("Informe o cnae da pessoaJuridica: ");
+            System.out.println("Informe o cnae da pessoa jurídica: ");
             pessoaJuridica.setCnaePrincipal(scanner.nextLine());
-            System.out.println("Informe o nome fantasia da pessoaJuridica: ");
+            System.out.println("Informe o nome fantasia da pessoa jurídica: ");
             pessoaJuridica.setNomeFantasia(scanner.nextLine());
-            System.out.println("Informe o id da pessoa: ");
+            System.out.println("Informe o id da pessoa atrelada a essa pessoa jurídica: ");
             PessoaPOJO pessoaPOJO = new PessoaPOJO();
             pessoaPOJO.setId(scanner.nextInt());
             pessoaJuridica.setPessoa(pessoaPOJO);
@@ -31,7 +31,7 @@ public class PessoaJuridicaExecution {
             System.out.println(msg);
             return msg;
         } catch (Exception ex) {
-            String msg = "Erro ao inserir " + ex.getMessage();
+            String msg = ex.getMessage();
             System.out.println(msg);
             return msg;
         }
@@ -47,7 +47,7 @@ public class PessoaJuridicaExecution {
             System.out.println(msg);
             return msg;
         } catch (Exception ex) {
-            String msg = "Erro ao buscar todos os itens: " + ex.getMessage();
+            String msg = ex.getMessage();
             System.out.println(msg);
             return msg;
         }
@@ -68,7 +68,7 @@ public class PessoaJuridicaExecution {
             System.out.println(msg);
             return msg;
         } catch (Exception ex) {
-            String msg = "Erro ao buscar o item por ID: " + ex.getMessage();
+            String msg = ex.getMessage();
             System.out.println(msg);
             return msg;
         }
@@ -88,7 +88,7 @@ public class PessoaJuridicaExecution {
             System.out.println(msg);
             return msg;
         } catch (Exception ex) {
-            String msg = "Erro ao deletar o item por ID: " + ex.getMessage();
+            String msg = ex.getMessage();
             System.out.println(msg);
             return msg;
         }
@@ -98,19 +98,19 @@ public class PessoaJuridicaExecution {
         try {
             PessoaJuridicaPOJO pessoaJuridica = new PessoaJuridicaPOJO();
             Scanner scanner = new Scanner(System.in);
-            System.out.println("Informe a razão social da pessoaJuridica: ");
+            System.out.println("Informe a razão social da pessoa jurídica: ");
             pessoaJuridica.setRazaoSocial(scanner.nextLine());
             
-            System.out.println("Informe o cnpj de pessoaJuridica: ");
+            System.out.println("Informe o cnpj de pessoa jurídica: ");
             pessoaJuridica.setCNPJ(scanner.nextLine());
             
-            System.out.println("Informe o cnae da pessoaJuridica: ");
+            System.out.println("Informe o cnae da pessoa jurídica: ");
             pessoaJuridica.setCnaePrincipal(scanner.nextLine());
             
-            System.out.println("Informe o nome fantasia da pessoaJuridica: ");
+            System.out.println("Informe o nome fantasia da pessoa jurídica: ");
             pessoaJuridica.setNomeFantasia(scanner.nextLine());
             
-            System.out.println("Informe o id da pessoa: ");
+            System.out.println("Informe o id da pessoa atrelada a essa pessoa jurídica: ");
             PessoaPOJO pessoaPOJO = new PessoaPOJO();
             pessoaPOJO.setId(scanner.nextInt());
             pessoaJuridica.setPessoa(pessoaPOJO);
@@ -122,7 +122,7 @@ public class PessoaJuridicaExecution {
             System.out.println(msg);
             return msg;
         } catch (Exception ex) {
-            String msg = "Erro ao dar update: " + ex.getMessage();
+            String msg = ex.getMessage();
             System.out.println(msg);
             return msg;
         }

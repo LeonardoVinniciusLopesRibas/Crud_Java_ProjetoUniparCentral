@@ -1,14 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-
 package br.unipar.central.executions;
 
-import br.unipar.central.models.CidadePOJO;
 import br.unipar.central.models.EstadoPOJO;
 import br.unipar.central.models.PaisPOJO;
-import br.unipar.central.models.PessoaPOJO;
 import br.unipar.central.services.EstadoService;
 import java.util.List;
 import java.util.Scanner;
@@ -30,10 +23,10 @@ public class EstadoExecution {
             System.out.println("Informe a sigla da estado: ");
             estado.setSigla(scanner.nextLine());
 
-            System.out.println("Informe o ra: ");
+            System.out.println("Informe o ra do aluno que está inserindo esse estado: ");
             estado.setRa(scanner.nextLine());
             
-            System.out.println("Informe o id de país: ");
+            System.out.println("Informe o id de país atrelado a esse estado: ");
             PaisPOJO paisPOJO = new PaisPOJO();
             paisPOJO.setId(scanner.nextInt());
             estado.setPais(paisPOJO);
@@ -44,7 +37,7 @@ public class EstadoExecution {
             System.out.println(msg);
             return msg;
         } catch (Exception ex) {
-            String msg = "Erro ao inserir " + ex.getMessage();
+            String msg = ex.getMessage();
             System.out.println(msg);
             return msg;
         }
@@ -60,7 +53,7 @@ public class EstadoExecution {
             System.out.println(msg);
             return msg;
         } catch (Exception ex) {
-            String msg = "Erro ao buscar todos os itens: " + ex.getMessage();
+            String msg = ex.getMessage();
             System.out.println(msg);
             return msg;
         }
@@ -72,7 +65,7 @@ public class EstadoExecution {
             EstadoPOJO estado = new EstadoPOJO();
             Scanner scanner = new Scanner(System.in);
 
-            System.out.println("Informe o ID de  : ");
+            System.out.println("Informe o ID do estado para realizar a busca: ");
             int id = scanner.nextInt();
             estado.setId(id);
             EstadoPOJO estadoPOJO = new EstadoPOJO();
@@ -81,7 +74,7 @@ public class EstadoExecution {
             System.out.println(msg);
             return msg;
         } catch (Exception ex) {
-            String msg = "Erro ao buscar o item por ID: " + ex.getMessage();
+            String msg = ex.getMessage();
             System.out.println(msg);
             return msg;
         }
@@ -101,7 +94,7 @@ public class EstadoExecution {
             System.out.println(msg);
             return msg;
         } catch (Exception ex) {
-            String msg = "Erro ao deletar o item por ID: " + ex.getMessage();
+            String msg = ex.getMessage();
             System.out.println(msg);
             return msg;
         }
@@ -122,10 +115,10 @@ public class EstadoExecution {
             System.out.println("Informe a sigla da estado: ");
             estado.setSigla(scanner.nextLine());
 
-            System.out.println("Informe o ra: ");
+            System.out.println("Informe o ra do aluno que está dando update nesse estado: ");
             estado.setRa(scanner.nextLine());
             
-            System.out.println("Informe o id de país: ");
+            System.out.println("Informe o id de país atrelado a esse estado: ");
             PaisPOJO paisPOJO = new PaisPOJO();
             paisPOJO.setId(scanner.nextInt());
             estado.setPais(paisPOJO);
@@ -136,7 +129,7 @@ public class EstadoExecution {
             System.out.println(msg);
             return msg;
         } catch (Exception ex) {
-            String msg = "Erro ao dar update: " + ex.getMessage();
+            String msg = ex.getMessage();
             System.out.println(msg);
             return msg;
         }

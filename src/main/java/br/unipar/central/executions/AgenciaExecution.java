@@ -15,27 +15,34 @@ public class AgenciaExecution {
             System.out.println("Informe o id de agencia: ");
             agencia.setId(scanner.nextInt());
             scanner.nextLine();
+            
             System.out.println("Informe o código da agencia: ");
             agencia.setCodigo(scanner.nextLine());
+            
             System.out.println("Informe o dígito de agencia: ");
             agencia.setDigito(scanner.nextLine());
+            
             System.out.println("Informe a razão social da agencia: ");
             agencia.setRazaoSocial(scanner.nextLine());
+            
             System.out.println("Informe o cnpj da agencia: ");
             agencia.setCnpj(scanner.nextLine());
-            System.out.println("Informe o ra de agencia: ");
+            
+            System.out.println("Informe o ra de aluno que está cadastrando essa agencia: ");
             agencia.setRa(scanner.nextLine());
-            System.out.println("Informe o id do banco: ");
+            
+            System.out.println("Informe o id do banco atrelado a essa agência: ");
             BancoPOJO bancoPOJO = new BancoPOJO();
             bancoPOJO.setId(scanner.nextInt());
             agencia.setBanco(bancoPOJO);
+            
             AgenciaService agenciaService = new AgenciaService();
             agenciaService.insert(agencia);
             String msg = "Inserido com sucesso";
             System.out.println(msg);
             return msg;
         } catch (Exception ex) {
-            String msg = "Erro ao inserir " + ex.getMessage();
+            String msg = ex.getMessage();
             System.out.println(msg);
             return msg;
         }
@@ -51,7 +58,7 @@ public class AgenciaExecution {
             System.out.println(msg);
             return msg;
         } catch (Exception ex) {
-            String msg = "Erro ao buscar todos os itens: " + ex.getMessage();
+            String msg = ex.getMessage();
             System.out.println(msg);
             return msg;
         }
@@ -66,7 +73,7 @@ public class AgenciaExecution {
             AgenciaPOJO agencia = new AgenciaPOJO();
             Scanner scanner = new Scanner(System.in);
 
-            System.out.println("Informe o ID de  : ");
+            System.out.println("Informe o ID da agência para realizar a busca: ");
             int id = scanner.nextInt();
             agencia.setId(id);
             AgenciaPOJO agenciaPOJO = new AgenciaPOJO();
@@ -75,7 +82,7 @@ public class AgenciaExecution {
             System.out.println(msg);
             return msg;
         } catch (Exception ex) {
-            String msg = "Erro ao buscar o item por ID: " + ex.getMessage();
+            String msg = ex.getMessage();
             System.out.println(msg);
             return msg;
         }
@@ -95,7 +102,7 @@ public class AgenciaExecution {
             System.out.println(msg);
             return msg;
         } catch (Exception ex) {
-            String msg = "Erro ao deletar o item por ID: " + ex.getMessage();
+            String msg = ex.getMessage();
             System.out.println(msg);
             return msg;
         }
@@ -116,9 +123,9 @@ public class AgenciaExecution {
             agencia.setRazaoSocial(scanner.nextLine());
             System.out.println("Informe o cnpj da agencia: ");
             agencia.setCnpj(scanner.nextLine());
-            System.out.println("Informe o ra de agencia: ");
+            System.out.println("Informe o ra de aluno que está dando update nessa agência: ");
             agencia.setRa(scanner.nextLine());
-            System.out.println("Informe o id do banco: ");
+            System.out.println("Informe o id do banco atrelado a essa agência: ");
             BancoPOJO bancoPOJO = new BancoPOJO();
             bancoPOJO.setId(scanner.nextInt());
             agencia.setBanco(bancoPOJO);
@@ -128,15 +135,9 @@ public class AgenciaExecution {
             System.out.println(msg);
             return msg;
         } catch (Exception ex) {
-            String msg = "Erro ao dar update: " + ex.getMessage();
+            String msg = ex.getMessage();
             System.out.println(msg);
             return msg;
         }
     }
 }
-
-//        try {
-//            
-//        } catch (Exception ex) {
-//            System.out.println(ex.getMessage());
-//        }

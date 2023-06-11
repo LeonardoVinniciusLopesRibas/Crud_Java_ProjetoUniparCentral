@@ -1,8 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-
 package br.unipar.central.executions;
 
 import br.unipar.central.models.PaisPOJO;
@@ -17,17 +12,17 @@ public class PaisExecution {
             PaisPOJO pais = new PaisPOJO();
             Scanner scanner = new Scanner(System.in);
 
-            System.out.println("Informe o id de pais: ");
+            System.out.println("Informe o id de país: ");
             pais.setId(scanner.nextInt());
             scanner.nextLine();
             
-            System.out.println("Informe o nome da pais: ");
+            System.out.println("Informe o nome da país: ");
             pais.setNome(scanner.nextLine());
             
-            System.out.println("Informe a sigla da pais: ");
+            System.out.println("Informe a sigla da país: ");
             pais.setSigla(scanner.nextLine());
             
-            System.out.println("Informe o ra de pais: ");
+            System.out.println("Informe o ra do aluno que está cadastrando esse país: ");
             pais.setRa(scanner.nextLine());
             
             PaisService paisService = new PaisService();
@@ -36,7 +31,7 @@ public class PaisExecution {
             System.out.println(msg);
             return msg;
         } catch (Exception ex) {
-            String msg = "Erro ao inserir " + ex.getMessage();
+            String msg = ex.getMessage();
             System.out.println(msg);
             return msg;
         }
@@ -52,7 +47,7 @@ public class PaisExecution {
             System.out.println(msg);
             return msg;
         } catch (Exception ex) {
-            String msg = "Erro ao buscar todos os itens: " + ex.getMessage();
+            String msg = ex.getMessage();
             System.out.println(msg);
             return msg;
         }
@@ -64,7 +59,7 @@ public class PaisExecution {
             PaisPOJO pais = new PaisPOJO();
             Scanner scanner = new Scanner(System.in);
 
-            System.out.println("Informe o ID de  : ");
+            System.out.println("Informe o ID de país para realizar a busca: ");
             int id = scanner.nextInt();
             pais.setId(id);
             PaisPOJO paisPOJO = new PaisPOJO();
@@ -73,7 +68,7 @@ public class PaisExecution {
             System.out.println(msg);
             return msg;
         } catch (Exception ex) {
-            String msg = "Erro ao buscar o item por ID: " + ex.getMessage();
+            String msg = ex.getMessage();
             System.out.println(msg);
             return msg;
         }
@@ -93,7 +88,7 @@ public class PaisExecution {
             System.out.println(msg);
             return msg;
         } catch (Exception ex) {
-            String msg = "Erro ao deletar o item por ID: " + ex.getMessage();
+            String msg = ex.getMessage();
             System.out.println(msg);
             return msg;
         }
@@ -114,7 +109,7 @@ public class PaisExecution {
             System.out.println("Informe a sigla da pais: ");
             pais.setSigla(scanner.nextLine());
             
-            System.out.println("Informe o ra de pais: ");
+            System.out.println("Informe o ra do aluno que está realizando updata nesse país: ");
             pais.setRa(scanner.nextLine());
             
             PaisService paisService = new PaisService();
@@ -123,7 +118,7 @@ public class PaisExecution {
             System.out.println(msg);
             return msg;
         } catch (Exception ex) {
-            String msg = "Erro ao dar update: " + ex.getMessage();
+            String msg = ex.getMessage();
             System.out.println(msg);
             return msg;
         }

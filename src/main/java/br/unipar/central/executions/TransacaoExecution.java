@@ -4,9 +4,7 @@ import br.unipar.central.enums.TipoTransacaoEnum;
 import br.unipar.central.models.TransacaoPOJO;
 import br.unipar.central.services.TransacaoService;
 import java.sql.Timestamp;
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 
@@ -16,9 +14,9 @@ public class TransacaoExecution {
         try {
             TransacaoPOJO transacao = new TransacaoPOJO();
             Scanner scanner = new Scanner(System.in);
-            System.out.println("Informe o id de transacao: ");
+            System.out.println("Informe o id de transação: ");
             transacao.setId(scanner.nextInt());
-            System.out.println("Informe o valor da transacao: ");
+            System.out.println("Informe o valor da transação: ");
             transacao.setValor(scanner.nextDouble());
 
             Calendar cal = Calendar.getInstance();
@@ -57,13 +55,13 @@ public class TransacaoExecution {
             }
             transacao.setTipo(tipoTransacao);
 
-            System.out.println("Informe o ra de transacao: ");
+            System.out.println("Informe o ra do aluno realizando essa transação: ");
             transacao.setRa(scanner.nextLine());
 
-            System.out.println("Informe a conta de origem: ");
+            System.out.println("Informe a conta de origem dessa transação: ");
             transacao.setConta_origem(scanner.nextInt());
 
-            System.out.println("Informe a conta de destino: ");
+            System.out.println("Informe a conta de destino dessa transação: ");
             transacao.setConta_destino(scanner.nextInt());
 
             TransacaoService transacaoService = new TransacaoService();
@@ -72,7 +70,7 @@ public class TransacaoExecution {
             System.out.println(msg);
             return msg;
         } catch (Exception ex) {
-            String msg = "Erro ao inserir " + ex.getMessage();
+            String msg = ex.getMessage();
             System.out.println(msg);
             return msg;
         }
@@ -88,7 +86,7 @@ public class TransacaoExecution {
             System.out.println(msg);
             return msg;
         } catch (Exception ex) {
-            String msg = "Erro ao buscar todos os itens: " + ex.getMessage();
+            String msg = ex.getMessage();
             System.out.println(msg);
             return msg;
         }
@@ -100,7 +98,7 @@ public class TransacaoExecution {
             TransacaoPOJO transacao = new TransacaoPOJO();
             Scanner scanner = new Scanner(System.in);
 
-            System.out.println("Informe o ID de  : ");
+            System.out.println("Informe o ID da transação: ");
             int id = scanner.nextInt();
             transacao.setId(id);
             TransacaoPOJO transacaoPOJO = new TransacaoPOJO();
@@ -109,7 +107,7 @@ public class TransacaoExecution {
             System.out.println(msg);
             return msg;
         } catch (Exception ex) {
-            String msg = "Erro ao buscar o item por ID: " + ex.getMessage();
+            String msg = ex.getMessage();
             System.out.println(msg);
             return msg;
         }
@@ -129,7 +127,7 @@ public class TransacaoExecution {
             System.out.println(msg);
             return msg;
         } catch (Exception ex) {
-            String msg = "Erro ao deletar o item por ID: " + ex.getMessage();
+            String msg = ex.getMessage();
             System.out.println(msg);
             return msg;
         }
@@ -181,7 +179,7 @@ public class TransacaoExecution {
             }
             transacao.setTipo(tipoTransacao);
             scanner.nextLine();
-            System.out.println("Informe o ra de transacao: ");
+            System.out.println("Informe o ra do aluno que está realizando update nessa transacao: ");
             transacao.setRa(scanner.nextLine());
 
             System.out.println("Informe a conta de origem: ");
@@ -196,7 +194,7 @@ public class TransacaoExecution {
             System.out.println(msg);
             return msg;
         } catch (Exception ex) {
-            String msg = "Erro ao dar update: " + ex.getMessage();
+            String msg = ex.getMessage();
             System.out.println(msg);
             return msg;
         }
